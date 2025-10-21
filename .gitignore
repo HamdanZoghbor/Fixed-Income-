@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Virtual environments
+venv/
+.env/
+.git_usage/
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Python testing
+pytest_cache/
+.coverage
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Ignore all temporary files
+*.tmp
+*.swp
+
+#ignore all pdfs
+*.pdf
