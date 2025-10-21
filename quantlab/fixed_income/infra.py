@@ -1,23 +1,18 @@
 import time
-from functools import wraps
-from .exceptions import PortfolioError
-
-
-def validate_inputs(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        for arg in args[1:]:
-            if arg is None:
-                raise PortfolioError(f"Invalid argument in {func.__name__}")
-        return func(*args, **kwargs)
-    return wrapper
-
 
 def timeit(func):
-    @wraps(func)
     def wrapper(*args, **kwargs):
         start = time.time()
         result = func(*args, **kwargs)
-        elapsed = round((time.time() - start) * 1000)
-        return {"result": result, "time_ms": elapsed}
+        end = time.time()
+        print(f"⏱️ {func.__name__} took {end - start:.6f} seconds")
+        return result
+    return wrapper
+
+def validate_inputs(func):
+    def wrapper(*args, **kwargs):
+        # Example validation: Check if all numeric inputs are non-negative
+        if len(args) == 0 and len(kwargs) == 0:
+            raise ValueError(f"The function {func.__name__} requires at least one argument.")
+        return func(*args, **kwargs)
     return wrapper
