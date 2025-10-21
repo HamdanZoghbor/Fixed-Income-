@@ -12,11 +12,7 @@ def timeit(func):
 def validate_inputs(func):
     def wrapper(*args, **kwargs):
         # Example validation: Check if all numeric inputs are non-negative
-        for arg in args:
-            if isinstance(arg, (int, float)) and arg < 0:
-                raise ValueError(f"Invalid input: {arg} is negative")
-        for key, value in kwargs.items():
-            if isinstance(value, (int, float)) and value < 0:
-                raise ValueError(f"Invalid input: {key}={value} is negative")
+        if len(args) == 0 and len(kwargs) == 0:
+            raise ValueError(f"The function {func.__name__} requires at least one argument.")
         return func(*args, **kwargs)
     return wrapper
