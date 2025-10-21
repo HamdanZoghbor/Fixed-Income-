@@ -7,3 +7,12 @@ class InterpolationError(Exception):
     """Raised when discount factor interpolation or extrapolation fails."""
     def __init__(self, message: str):
         super().__init__(f"InterpolationError: {message}")
+
+class PortfolioError(Exception):
+    """Raised for errors related to Portfolio operations."""
+    def __init__(self, message: str):
+        super().__init__(f"PortfolioError: {message}")
+
+        
+
+        
