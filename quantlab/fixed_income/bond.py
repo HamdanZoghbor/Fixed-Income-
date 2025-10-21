@@ -4,6 +4,7 @@ from .curve import DiscountCurve
 import numpy as np 
 from .exceptions import BondValidationError
 
+#fixed path
 
 class Bond:
     def __init__(self, issue_date, maturity_date, zero_rate, coupon_rate, frequency, 
