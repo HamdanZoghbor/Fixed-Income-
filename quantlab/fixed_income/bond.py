@@ -1,6 +1,6 @@
 from datetime import date
 from dateutil.relativedelta import relativedelta 
-from curve import DiscountCurve
+from .curve import DiscountCurve
 import numpy as np 
 from .exceptions import BondValidationError
 
