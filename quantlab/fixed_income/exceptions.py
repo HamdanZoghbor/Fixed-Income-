@@ -11,3 +11,11 @@ class InterpolationError(Exception):
 class BondValidationError(Exception):
     """Custom exception for invalid bond parameters."""
     pass
+class PortfolioError(Exception):
+    """Raised for errors related to Portfolio operations."""
+    def __init__(self, message: str):
+        super().__init__(f"PortfolioError: {message}")
+
+        
+
+        
