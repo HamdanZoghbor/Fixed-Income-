@@ -4,6 +4,11 @@ import math
 from dataclasses import dataclass
 from quantlab.fixed_income.portfolio import Position, Portfolio
 
+import sys
+from pathlib import Path
+
+# Add project root to Python path dynamically
+sys.path.insert(0, str(Path(_file_).resolve().parent.parent))
 class FlatCurve:
     def __init__(self, rate: float, valuation_date: date):
         self._zeros = {valuation_date: rate}
